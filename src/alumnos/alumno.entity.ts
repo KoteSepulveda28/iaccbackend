@@ -12,7 +12,22 @@ export class Alumno {
     nombre: string;
 
     @Column()
+    @IsNotEmpty()
+    @IsString()
+    apellido: string;
+
+    @Column()
+    @IsNotEmpty()
+    @IsString()
+    email: string;
+
+    @Column()
     @Min(1)
     @IsNumber()
     edad: number;
+
+    @Column()
+    @IsNotEmpty()
+    @IsString()
+    direccion: string;
 }

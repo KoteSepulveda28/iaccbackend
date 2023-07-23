@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
-import { IsNotEmpty } from 'class-validator';
+import { IsNotEmpty, IsInt } from 'class-validator';
 
 @Entity()
 export class Curso {
@@ -12,5 +12,18 @@ export class Curso {
 
   @Column()
   @IsNotEmpty()
-  descripcion: string;
+  codigo: string;
+
+  @Column()
+  @IsNotEmpty()
+  @IsInt()
+  anio: number;
+
+  @Column()
+  @IsNotEmpty()
+  semestre: string;
+  
+  @Column()
+  @IsNotEmpty()
+  sede: string;
 }

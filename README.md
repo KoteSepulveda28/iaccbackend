@@ -21,10 +21,10 @@ Se levantara el servicio de Backend en su localhost:3000
         curl -X GET http://localhost:3000/alumnos/{identificador}
 
     <!-- INGRESO POST -->
-        curl -X POST -H "Content-Type: application/json" -d '{"nombre":"Alumno 1", "edad": 25}' http://localhost:3000/alumnos
+        curl -X POST -H "Content-Type: application/json" -d '{"nombre" : "Nombre 1","apellido" : "Apellido 1","email" : "kotesepulveda28@gmail.com","edad" : 25, "direccion" : "direccion 1"}' http://localhost:3000/alumnos
 
     <!-- EDICION PUT -->
-        curl -X PUT -H "Content-Type: application/json" -d '{"nombre":"Alumno Update", "edad": 32}' http://localhost:3000/alumnos/{identificador}
+        curl -X PUT -H "Content-Type: application/json" -d '{"nombre" : "Nombre Edit","apellido" : "Apellido 1","email" : "kotesepulveda28@gmail.com","edad" : 25, "direccion" : "direccion 1"}' http://localhost:3000/alumnos/{1}
 
     <!-- ELIMINAR DELETE -->
         curl -X DELETE http://localhost:3000/alumnos/{identificador}
@@ -39,10 +39,10 @@ Se levantara el servicio de Backend en su localhost:3000
         curl -X GET http://localhost:3000/cursos/{identificador}
 
     <!-- INGRESO POST -->
-        curl -X POST -H "Content-Type: application/json" -d '{"nombre":"Curso 1", "descripcion": "Curso Nro 1"}' http://localhost:3000/cursos
+        curl -X POST -H "Content-Type: application/json" -d '{"nombre":"Curso 1", "codigo": "0122", "anio" : 2023, "semestre" : "IV", "sede" : "Santiago"}' http://localhost:3000/cursos
 
     <!-- EDICION PUT -->
-        curl -X PUT -H "Content-Type: application/json" -d '{"nombre":"Curso Update", "descripcion": "Curso Nro 1"}' http://localhost:3000/cursos/{identificador}
+        curl -X PUT -H "Content-Type: application/json" -d '{"nombre":"Curso Edit", "codigo": "0122", "anio" : 2023, "semestre" : "IV", "sede" : "Santiago"}' http://localhost:3000/cursos/{1}
 
     <!-- ELIMINAR DELETE -->
         curl -X DELETE http://localhost:3000/cursos/{1}
