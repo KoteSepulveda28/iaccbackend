@@ -3,12 +3,15 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Curso } from './curso.entity';
+import { Alumno } from 'src/alumnos/alumno.entity';
 
 @Injectable()
 export class CursosService {
   constructor(
     @InjectRepository(Curso)
     private readonly cursoRepository: Repository<Curso>,
+    @InjectRepository(Alumno)
+    private alumnoRepository: Repository<Alumno>,
   ) {}
 
   async findAll(): Promise<Curso[]> {
@@ -34,4 +37,14 @@ export class CursosService {
   async delete(id: number): Promise<void> {
     await this.cursoRepository.delete(id);
   }
+
+  // async addAlumnoToCurso(cursoId: number, id: number): Promise<void> {
+  //   const curso = await this.cursoRepository.findOne(cursoId, { relations: ['alumnos'] });
+  //   const alumno = await this.alumnoRepository.findOne({where : {id}});
+
+  //   if (curso && alumno) {
+  //     curso.alumnos.push(alumno);
+  //     await this.cursoRepository.save(curso);
+  //   }
+  // }
 }
